@@ -1,0 +1,9 @@
+#!/bin/sh
+
+MSG="$1"
+
+if ! grep ^IS-[0-9] "$MSG";then
+    cat "$MSG"
+    echo "Your commit message must start the JIRA ID e.g 'IS-1234 added file' "
+    exit 1
+fi
